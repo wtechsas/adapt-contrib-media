@@ -1,0 +1,17 @@
+{
+  "name": "adapt-contrib-media",
+  "version": "10.0.0",
+  "framework": ">=5.19.1",
+  "homepage": "https://github.com/wtechsas/adapt-contrib-media",
+  "bugs": "https://github.com/wtechsas/adapt-contrib-media/issues",
+  "component": "media",
+  "targetAttribute": "_media",
+  "displayName": "Reproductor de media",
+  "description": "Un componente que se utiliza como reproductor de video o audio",
+  "main": "/js/adapt-contrib-media.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPL-3.0"
+}

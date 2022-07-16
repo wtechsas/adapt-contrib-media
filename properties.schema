@@ -1,0 +1,503 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "title": "Región del componente",
+      "default": "Reproductor de media {{#any _transcript._inlineTranscript _transcript._externalTranscript}} y transcripción{{/any}}.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "skipToTranscript": {
+      "type": "string",
+      "required": true,
+      "title": "Omitir la transcripción",
+      "default": "Omitir la transcripción",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "playText": {
+      "type": "string",
+      "required": true,
+      "title": "Reproducir",
+      "default": "Reproducir",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "pauseText": {
+      "type": "string",
+      "required": true,
+      "title": "Pausar",
+      "default": "Pausar",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "stopText": {
+      "type": "string",
+      "required": true,
+      "title": "Detener",
+      "default": "Detener",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "audioPlayerText": {
+      "type": "string",
+      "required": true,
+      "default": "Texto - reproductor de audio",
+      "title": "Reproductor de audio",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "videoPlayerText": {
+      "type": "string",
+      "required": true,
+      "default": "Texto - Reproductor de video",
+      "title": "Reproductor de video",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "tracksText": {
+      "type": "string",
+      "required": true,
+      "title": "Texto - Subtítulos",
+      "default": "Subtítulos",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "timeSliderText": {
+      "type": "string",
+      "required": true,
+      "title": "Texto - línea de tiempo",
+      "default": "Línea de tiempo",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "muteText": {
+      "type": "string",
+      "required": true,
+      "default": "Texto - Silenciar",
+      "title": "Silenciar",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "unmuteStatusText": {
+      "type": "string",
+      "required": true,
+      "default": "Texto - Desactivar el silencio",
+      "title": "Desactivar el silencio",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "muteStatusText": {
+      "type": "string",
+      "required": true,
+      "title": "Texto - Estado silencio",
+      "default": "Silenciado",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "volumeSliderText": {
+      "type": "string",
+      "required": true,
+      "default": "Texto - Controlador de volumen",
+      "title": "Controlador de volumen",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "fullscreenText": {
+      "type": "string",
+      "required": true,
+      "default": "Texto - Pantalla completa",
+      "title": "Pantalla completa",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "goFullscreenText": {
+      "type": "string",
+      "required": true,
+      "default": "Texto - Ver pantalla completa",
+      "title": "Ver en pantalla completa",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "turnOffFullscreenText": {
+      "type": "string",
+      "required": true,
+      "title": "Salir de pantalla completa",
+      "default": "Texto - Desactivar pantalla completa",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "noneText": {
+      "type": "string",
+      "required": true,
+      "title": "Texto - Ninguno",
+      "default": "Ninguno",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "skipBackText": {
+      "type": "string",
+      "required": true,
+      "title": "Texto - Volver hacia atrás",
+      "default": "Volver hacia atrás %1 segundos",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "allyVolumeControlText": {
+      "type": "string",
+      "required": true,
+      "title" : "Texto - Teclas de control de volumen",
+      "default": "Usar las teclas de flecha arriba o abajo para aumentar o disminuir el volumen.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "progessHelpText": {
+      "type": "string",
+      "required": true,
+      "title": "Texto - Teclas de control de progreso",
+      "default": "Use las teclas de flecha izquierda o derecha para avanzar o retroceder un segundo, flechas arriba/abajo para avanzar diez segundos.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Instrucciones",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Instrucciones que se mostrarán en este componente.",
+      "translatable": true
+    },
+    "_media": {
+      "type": "object",
+      "required": true,
+      "title": "Recurso multimedia",
+      "properties": {
+        "mp4": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Enlace MP4",
+          "inputType": "Asset:video",
+          "validators": [],
+          "help": "Enlace a un video MP4"
+        },
+        "ogv": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Enlace OGV",
+          "inputType": "Asset:video",
+          "validators": [],
+          "help": "Enlace a un video OGV"
+        },
+        "webm": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Enlace WEBM",
+          "inputType": "Asset:video",
+          "validators": [],
+          "help": "Enlace a un vídeo WEBM"
+        },
+        "mp3": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Enlace MP3",
+          "inputType": "Asset:audio",
+          "validators": [],
+          "help": "Enlace a un audio MP3"
+        },
+        "source": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "URL externo",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Introduce un enlace externo, como una URL de YouTube"
+        },
+        "type": {
+          "type": "string",
+          "required": false,
+          "enum": ["", "video/youtube", "video/vimeo"],
+          "default": "",
+          "title": "Tipo de video",
+          "inputType": {
+            "type": "Select",
+            "options":[
+              { "val": "", "label": "" },
+              { "val": "video/youtube", "label": "Video de Youtube" },
+              { "val": "video/vimeo", "label": "Video de Vimeo" }
+            ]
+          },
+          "validators": [],
+          "help": "Seleccionar el tipo de 'URL externo', para un enlace de YouTube sería 'video/youtube' o 'video/vimeo' para Vimeo"
+        },
+        "poster": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Imagen de portada",
+          "inputType": "Asset:image",
+          "validators": [],
+          "help": "Imagen que se muestra antes de que se reproduzca el video (excepto en Vimeo)"
+        },
+        "cc": {
+          "type": "array",
+          "required": false,
+          "title": "Subtítulos",
+          "items": {
+            "type": "object",
+            "required": false,
+            "properties": {
+              "srclang": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Código del lenguaje",
+                "inputType": "Text",
+                "validators": ["required"]
+              },
+              "src": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Archivo de subtítulos",
+                "inputType": "Asset:other",
+                "validators": ["required"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "_setCompletionOn": {
+      "type": "string",
+      "required": true,
+      "enum": ["inview", "play", "ended"],
+      "default": "play",
+      "title": "Acción de finalización",
+      "inputType": {
+        "type": "Select",
+        "options":[
+          { "val": "inview", "label": "Al ver" },
+          { "val": "play", "label": "Al reproducir" },
+          { "val": "ended", "label": "Al terminar" }
+        ]
+      },
+      "validators": ["required"],
+      "help": "Define qué evento multimedia debe desencadenar la finalización de este componente."
+    },
+    "_useClosedCaptions": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "Usar subtítulos",
+      "inputType": "Checkbox",
+      "validators": []
+    },
+    "_startLanguage": {
+      "type": "string",
+      "required": false,
+      "default": "es",
+      "title": "Idioma inicial de los subtítulos",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Seleccionar el idioma de los subtítulos que se mostrarán por defecto. Sólo es necesario cuando los subtítulos están activados y hay varios idiomas."
+    },
+    "_showVolumeControl": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "Mostrar controlador de volumen (no compatible con dispositivos móviles)",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Cuando se activa, el controlador de volumen aparecerá en el reproductor multimedia. En los dispositivos móviles, el nivel de audio se controla con los controles de volumen físicos del dispositivo."
+    },
+    "_startVolume": {
+      "type": "string",
+      "required":true,
+      "enum": ["0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"],
+      "default": "80%",
+      "title": "Volumen inicial (no compatible con dispositivos móviles)",
+      "inputType": {"type": "Select", "options":["0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"]},
+      "validators": ["required"],
+      "help": "Define el volumen por defecto. En los dispositivos móviles el nivel de audio está bajo el control del usuario"
+    },
+    "_allowFullScreen": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "Permitir pantalla completa",
+      "inputType": "Checkbox",
+      "validators": []
+    },
+    "_aspectRatio": {
+      "type": "string",
+      "required": true,
+      "default": "landscape",
+      "title": "Relación de aspecto",
+      "enum": ["landscape", "portrait", "square"],
+      "inputType": {
+        "type": "Select",
+        "options": [
+          { "val": "landscape", "label": "Paisaje" },
+          { "val": "portrait", "label": "Retrato" },
+          { "val": "square", "label": "Cuadrado" }
+        ]
+      }
+    },
+    "_pauseWhenOffScreen": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "Poner en pausa la reproducción cuando el vídeo ya no está a la vista.",
+      "inputType": "Checkbox",
+      "validators": []
+    },
+    "_playsinline": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "Reproducir videos en línea en iOS",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Si se activa, los vídeos se reproducirán 'en línea' en los iPhones (del mismo modo que en los iPads). Ten en cuenta que esta función solo está disponible en iOS10 y superior."
+    },
+    "_preventForwardScrubbing": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "¿Intento evitar la limpieza de medios?",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "If enabled, will attempt to prevent users from skipping ahead in audio/video."
+    },
+    "_transcript": {
+      "type": "object",
+      "required": false,
+      "title": "Opciones de transcripción",
+      "properties": {
+        "_setCompletionOnView": {
+          "type": "boolean",
+          "required": false,
+          "default": true,
+          "title": "¿Finalización de la activación?",
+          "inputType": "Checkbox",
+          "validators": [],
+          "help": "Si desea que este componente se marque como completado cuando se muestre la transcripción."
+        },
+        "_inlineTranscript": {
+          "type": "boolean",
+          "required": false,
+          "default": false,
+          "title": "Mostrar en línea",
+          "inputType": "Checkbox",
+          "validators": []
+        },
+        "_externalTranscript": {
+          "type": "boolean",
+          "required": false,
+          "default": false,
+          "title": "Mostrar enlace",
+          "inputType": "Checkbox",
+          "validators": []
+        },
+        "inlineTranscriptButton": {
+          "type": "string",
+          "required": false,
+          "default": "Ver en línea",
+          "title": "Texto botón - Ver en línea",
+          "inputType": "Text",
+          "validators": [],
+          "translatable": true
+        },
+        "inlineTranscriptCloseButton": {
+          "type": "string",
+          "required": false,
+          "default": "Cerrar en línea",
+          "title": "Texto botón - Ver en línea",
+          "inputType": "Text",
+          "validators": [],
+          "translatable": true
+        },
+        "inlineTranscriptBody": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Transcripción en línea",
+          "inputType": "TextArea",
+          "validators": [],
+          "help": "Texto opcional que aparecerá debajo del video.",
+          "translatable": true
+        },
+        "transcriptLinkButton": {
+          "type": "string",
+          "required": false,
+          "default": "Abrir enlace",
+          "title": "Texto botón - Abrir enlace",
+          "inputType": "Text",
+          "validators": [],
+          "translatable": true
+        },
+        "transcriptLink": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Enlace de transcripción",
+          "inputType": "Asset:other",
+          "validators": [],
+          "help": "Seleccione un archivo para el enlace de transcripción"
+        }
+      }
+    },
+    "_playerOptions": {
+      "type": "object",
+      "default": {},
+      "title": "Opciones del reproductor",
+      "inputType": {
+        "type": "CodeEditor",
+        "mode": "json"
+      },
+      "validators": [],
+      "help": "Objeto opcional que se puede utilizar para personalizar el reproductor."
+    }
+  }
+}
