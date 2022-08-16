@@ -427,8 +427,8 @@
         "_inlineTranscript": {
           "type": "boolean",
           "required": false,
-          "default": false,
-          "title": "Mostrar en línea",
+          "default": true,
+          "title": "Mostrar transcripción",
           "inputType": "Checkbox",
           "validators": []
         },
@@ -443,8 +443,8 @@
         "inlineTranscriptButton": {
           "type": "string",
           "required": false,
-          "default": "Ver en línea",
-          "title": "Texto botón - Ver en línea",
+          "default": "Ver transcripción",
+          "title": "Texto botón - Ver transcripción",
           "inputType": "Text",
           "validators": [],
           "translatable": true
@@ -452,8 +452,8 @@
         "inlineTranscriptCloseButton": {
           "type": "string",
           "required": false,
-          "default": "Cerrar en línea",
-          "title": "Texto botón - Ver en línea",
+          "default": "Cerrar transcripción",
+          "title": "Texto botón - Cerrar transcripción",
           "inputType": "Text",
           "validators": [],
           "translatable": true
@@ -462,7 +462,7 @@
           "type": "string",
           "required": false,
           "default": "",
-          "title": "Transcripción en línea",
+          "title": "Transcripción del video",
           "inputType": "TextArea",
           "validators": [],
           "help": "Texto opcional que aparecerá debajo del video.",
