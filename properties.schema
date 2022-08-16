@@ -435,7 +435,7 @@
           "title": "Mostrar transcripción",
           "inputType": "Checkbox",
           "validators": [],
-          "help": "Muestra un botón que le permite al usuario ver en linea el vídeo."
+          "help": "Muestra un botón que le permite al usuario ver la transcripción del vídeo."
         },
         "_externalTranscript": {
           "type": "boolean",
