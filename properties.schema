@@ -365,7 +365,7 @@
     "_allowFullScreen": {
       "type": "boolean",
       "required": false,
-      "default": false,
+      "default": true,
       "title": "Permitir pantalla completa",
       "inputType": "Checkbox",
       "validators": [],
