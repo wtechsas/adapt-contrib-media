@@ -409,10 +409,10 @@
       "type": "boolean",
       "required": false,
       "default": false,
-      "title": "¿Intento evitar la limpieza de medios?",
+      "title": "¿Evitar saltos en la barra de reproducción?",
       "inputType": "Checkbox",
       "validators": [],
-      "help": "If enabled, will attempt to prevent users from skipping ahead in audio/video."
+      "help": "Si está habilitado, intentará evitar que los usuarios realicen saltos en la barra de reproducción (Solo disponible para seleccionar archivo)"
     },
     "_transcript": {
       "type": "object",
